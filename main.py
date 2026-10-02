@@ -1,4 +1,5 @@
 from imc import calcular_imc, classificar_imc
+from notas import media_notas, situacao_aluno
 
 print("calculadora de imc")
 
@@ -7,3 +8,11 @@ altura = float(input("altura (m): "))
 
 imc = calcular_imc(peso, altura)
 print(f"seu imc e {imc:.2f}, classificacao: {classificar_imc(imc)}")
+
+print("\nmedia de notas")
+nota1 = float(input("nota 1: "))
+nota2 = float(input("nota 2: "))
+nota3 = float(input("nota 3: "))
+
+media = media_notas([nota1, nota2, nota3])
+print(f"media: {media:.2f}, situacao: {situacao_aluno(media)}")
