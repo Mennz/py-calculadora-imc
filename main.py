@@ -26,7 +26,7 @@ while True:
         celsius = float(input("temperatura em celsius: "))
         f = celsius_para_fahrenheit(celsius)
         k = celsius_para_kelvin(celsius)
-        print(f"{celsius}C = {f:.2f}F = {k:.2f}K")
+        print(f"{celsius:.2f}C = {f:.2f}F = {k:.2f}K")
 
     elif opcao == "4":
         break
