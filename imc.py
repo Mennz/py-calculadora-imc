@@ -23,3 +23,14 @@ def faixa_peso_ideal(altura):
     minimo = 18.5 * altura ** 2
     maximo = 24.9 * altura ** 2
     return minimo, maximo
+
+
+def grafico_imc(imc):
+    tamanho = 40
+    escala_maxima = 50
+    posicao = int(imc / escala_maxima * tamanho)
+    posicao = min(posicao, tamanho - 1)
+
+    barra = list("-" * tamanho)
+    barra[posicao] = "O"
+    return f"0 |{''.join(barra)}| {escala_maxima}"
