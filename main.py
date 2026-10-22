@@ -2,13 +2,15 @@ from imc import calcular_imc, classificar_imc, faixa_peso_ideal
 from notas import media_notas, situacao_aluno
 from temperatura import celsius_para_fahrenheit, celsius_para_kelvin
 from historico import carregar_historico, salvar_medicao
+from imc_infantil import calcular_imc_infantil
 
 while True:
     print("\n1 - calcular imc")
     print("2 - media de notas")
     print("3 - conversao de temperatura")
     print("4 - ver historico de imc")
-    print("5 - sair")
+    print("5 - imc infantil (por idade)")
+    print("6 - sair")
     opcao = input("escolha: ")
 
     if opcao == "1":
@@ -43,6 +45,13 @@ while True:
         print(f"{celsius:.2f}C = {f:.2f}F = {k:.2f}K")
 
     elif opcao == "5":
+        peso = float(input("peso (kg): "))
+        altura = float(input("altura (m): "))
+        idade = int(input("idade (anos): "))
+        imc, classificacao = calcular_imc_infantil(peso, altura, idade)
+        print(f"imc {imc:.2f}, classificacao: {classificacao}")
+
+    elif opcao == "6":
         break
 
     else:
