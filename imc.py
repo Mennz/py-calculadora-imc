@@ -16,3 +16,10 @@ def classificar_imc(imc):
         return "obesidade grau 2"
     else:
         return "obesidade grau 3"
+
+
+# faixa de imc considerada normal e a mesma usada no classificar_imc
+def faixa_peso_ideal(altura):
+    minimo = 18.5 * altura ** 2
+    maximo = 24.9 * altura ** 2
+    return minimo, maximo

@@ -1,4 +1,4 @@
-from imc import calcular_imc, classificar_imc
+from imc import calcular_imc, classificar_imc, faixa_peso_ideal
 from notas import media_notas, situacao_aluno
 from temperatura import celsius_para_fahrenheit, celsius_para_kelvin
 from historico import carregar_historico, salvar_medicao
@@ -17,6 +17,8 @@ while True:
         imc = calcular_imc(peso, altura)
         classificacao = classificar_imc(imc)
         print(f"seu imc e {imc:.2f}, classificacao: {classificacao}")
+        minimo, maximo = faixa_peso_ideal(altura)
+        print(f"peso ideal para essa altura: entre {minimo:.1f}kg e {maximo:.1f}kg")
         salvar_medicao(peso, altura, imc, classificacao)
 
     elif opcao == "4":
